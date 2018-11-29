@@ -3,10 +3,10 @@
  * @type {Object}
  */
 var featureStyleList = {
-	'default': { color: 'rgba(153, 153, 153, 1)', img: 'image/018.png'},
+	'default': { color: 'rgba(153, 153, 153, 1)', img: 'image/icon_1/icon_060532_256.png'},
 	'認可外': { color: '#0362A0', img: 'image/019.png'},
 	'幼稚園': { color: '#FF5C24', img: 'image/029.png'},
-	'認可保育所': { color: '#6EE100', img: 'image/018.png'}
+	'認可保育所': { color: '#6EE100', img: 'image/icon_1/icon_060532_256.png'}
 };
 
 /**
