@@ -23,6 +23,9 @@
 	font-weight: bold;
 	text-shadow: black 0.1em 0.1em 0.2em;
 }
+#lblInnshoku.ui-checkbox-on {
+	background-color: #FFF624;
+}
 
 #lblNinka.ui-checkbox-on {
 	background-color: #6EE100;
