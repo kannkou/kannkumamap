@@ -21,26 +21,34 @@ FacilityFilter.prototype.getFilteredFeaturesGeoJson = function (conditions, nurs
     // 認可保育園の検索元データを取得　<-ここを観光地や駐車場に変更しましょう
     var ninkaFeatures = [];
     _features = nurseryFacilities.features.filter(function (item,idx) {
-            var type = item.properties['種別'] ? item.properties['種別'] : item.properties['Type'];
-            if(type == "認可保育所") return true;
+            var type = item.properties['genre'];
+            if(type == "1") return true;
         });
     Array.prototype.push.apply(ninkaFeatures, _features);
 
     // 認可外保育園の検索元データを取得　<-ここを観光地や駐車場に変更しましょう
     var ninkagaiFeatures = [];
     _features = nurseryFacilities.features.filter(function (item,idx) {
-            var type = item.properties['種別'] ? item.properties['種別'] : item.properties['Type'];
-            if(type == "認可外") return true;
+            var type = item.properties['genre'];
+            if(type == "2") return true;
         });
     Array.prototype.push.apply(ninkagaiFeatures, _features);
 
     // 幼稚園の検索元データを取得　<-ここを観光地や駐車場に変更しましょう
     var youchienFeatures = [];
     _features = nurseryFacilities.features.filter(function (item,idx) {
-            var type = item.properties['種別'] ? item.properties['種別'] : item.properties['Type'];
-            if(type == "幼稚園") return true;
+            var type = item.properties['genre'];
+            if(type == "3") return true;
         });
     Array.prototype.push.apply(youchienFeatures, _features);
+
+ // 幼稚園の検索元データを取得　<-ここを観光地や駐車場に変更しましょう
+    var innshokuFeatures = [];
+    _features = nurseryFacilities.features.filter(function (item,idx) {
+            var type = item.properties['genre'];
+            if(type == "4") return true;
+        });
+    Array.prototype.push.apply(innshokuFeatures, _features);
 
     // ----------------------------------------------------------------------
     // 認可保育所向けフィルター

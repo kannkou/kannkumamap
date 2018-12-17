@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>くまがや観光マップ by infosys</title>
+        <title>くまがや観光マップ</title>
         <link rel="stylesheet" href="css/ol.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css.map" type="text/css">
@@ -25,16 +25,19 @@
             <div role="main" class="ui-content">
             <div id="nav">
                 <fieldset id="nav1" data-role="controlgroup" data-type="horizontal" data-mini="true">
-                    <label for="cbNinka" id="lblNinka">認可</label>
+                    <label for="cbNinka" id="lblNinka">駐車場</label>
                     <input type="checkbox" name="cbNinka" id="cbNinka" checked="checked">
 
-                    <label for="cbNinkagai" id="lblNinkagai">認可外</label>
+                    <label for="cbNinkagai" id="lblNinkagai">寺社仏閣</label>
                     <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">
 
-                    <label for="cbKindergarten" id="lblKindergarten">幼</label>
+                    <label for="cbInnshoku" id="lblInnshoku">飲食</label>
+                    <input type="checkbox" name="cbInnshoku" id="cbInnshoku" checked="checked">
+
+                    <label for="cbKindergarten" id="lblKindergarten">公園</label>
                     <input type="checkbox" name="cbKindergarten" id="cbKindergarten" checked="checked">
 
-                    <label for="cbElementarySchool" id="lblElementarySchool">小</label>
+                    <label for="cbElementarySchool" id="lblElementarySchool">飲食店</label>
                     <input type="checkbox" name="cbElementarySchool" id="cbElementarySchool">
 
                     <label for="cbMiddleSchool" id="lblMiddleSchool">中</label>
@@ -66,7 +69,7 @@
                         </optgroup>
                     </select>
 
-                    <a id="btnHelp" href="https://github.com/kannkou/kannkumamap" target="_blank" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a>
+                    <a id="btnHelp" href="https://docs.google.com/forms/d/e/1FAIpQLScJg3jTL3Eos0hECpst8_AXoB2zWb6ZltORGtpyCVxntSA8_w/viewform" target="_blank" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a>
                     <!--
                     <a id="btnHelp" href="#helpDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a>
                     -->

@@ -156,6 +156,18 @@ Papamamap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
         this.map.removeLayer(this.map.getLayers().item(4));
     }
 
+    // 飲食店
+    this.map.addLayer(
+        new ol.layer.Vector({
+            source: new ol.source.GeoJSON({
+                projection: 'EPSG:3857',
+                object: facilitiesData
+            }),
+            name: 'layerInnshoku',
+            style: innshokuStyleFunction
+        })
+    );
+
     // 幼稚園
     this.map.addLayer(
         new ol.layer.Vector({

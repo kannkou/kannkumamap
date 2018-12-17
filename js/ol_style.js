@@ -3,10 +3,11 @@
  * @type {Object}
  */
 var featureStyleList = {
-	'default': { color: 'rgba(153, 153, 153, 1)', img: 'image/018.png'},
-	'認可外': { color: '#0362A0', img: 'image/019.png'},
-	'幼稚園': { color: '#FF5C24', img: 'image/029.png'},
-	'認可保育所': { color: '#6EE100', img: 'image/018.png'}
+	'default': { color: 'rgba(153, 153, 153, 1)', img: 'image/icon_1/icon_060532_256.png'},
+	'2': { color: '#0362A0', img: 'image/icon_1/icon_042632_256.png'},
+        '4': { color: '#FFF624', img: 'image/icon_1/icon_042662_256.png'},
+	'3': { color: '#FF5C24', img: 'image/icon_1/icon_059102_256.png'},
+	'1': { color: '#6EE100', img: 'image/icon_1/icon_060532_256.png'}
 };
 
 /**
@@ -17,9 +18,9 @@ var featureStyleList = {
  */
 var ninkaStyleFunction = function(feature, resolution)
 {
-	var facilityTypeName = feature.get('種別') ? feature.get('種別') : feature.get('Type');
+	var facilityTypeName = feature.get('genre');
 	var style = [];
-	if(facilityTypeName === "認可保育所") {
+	if(facilityTypeName === "1") {
 		featureStyle = featureStyleList[facilityTypeName];
 		style        = nurseryStyleFunction(feature, resolution, featureStyle);
 	}
@@ -34,9 +35,9 @@ var ninkaStyleFunction = function(feature, resolution)
  */
 var ninkagaiStyleFunction = function(feature, resolution)
 {
-	var facilityTypeName = feature.get('種別') ? feature.get('種別') : feature.get('Type');
+	var facilityTypeName = feature.get('genre');
 	var style = [];
-	if(facilityTypeName === "認可外") {
+	if(facilityTypeName === "2") {
 		featureStyle = featureStyleList[facilityTypeName];
 		style        = nurseryStyleFunction(feature, resolution, featureStyle);
 	}
@@ -51,9 +52,26 @@ var ninkagaiStyleFunction = function(feature, resolution)
  */
 var kindergartenStyleFunction = function(feature, resolution)
 {
-	var facilityTypeName = feature.get('種別') ? feature.get('種別') : feature.get('Type');
+	var facilityTypeName = feature.get('genre');
 	var style = [];
-	if(facilityTypeName === "幼稚園") {
+	if(facilityTypeName === "3") {
+		featureStyle = featureStyleList[facilityTypeName];
+		style        = nurseryStyleFunction(feature, resolution, featureStyle);
+	}
+	return style;
+};
+
+/**
+ * 幼稚園向けスタイル
+ * @param  {[type]} feature    [description]
+ * @param  {[type]} resolution [description]
+ * @return {[type]}            [description]
+ */
+var innshokuStyleFunction = function(feature, resolution)
+{
+	var facilityTypeName = feature.get('genre');
+	var style = [];
+	if(facilityTypeName === "4") {
 		featureStyle = featureStyleList[facilityTypeName];
 		style        = nurseryStyleFunction(feature, resolution, featureStyle);
 	}

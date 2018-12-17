@@ -210,6 +210,11 @@ $('#mainPage').on('pageshow', function() {
 	});
 
 	// 幼稚園チェックボックスのイベント設定
+	$('#cbInnshoku').click(function() {
+		papamamap.switchLayer(this.id, $(this).prop('checked'));
+	});
+
+	// 幼稚園チェックボックスのイベント設定
 	$('#cbKindergarten').click(function() {
 		papamamap.switchLayer(this.id, $(this).prop('checked'));
 	});
@@ -398,9 +403,11 @@ $('#mainPage').on('pageshow', function() {
 	 */
 	function updateLayerStatus(checkObj)
 	{
+		papamamap.switchLayer($('#cbInnshoku').prop('id'), checkObj.innshoku);
 		papamamap.switchLayer($('#cbNinka').prop('id'), checkObj.ninka);
 		papamamap.switchLayer($('#cbNinkagai').prop('id'), checkObj.ninkagai);
 		papamamap.switchLayer($('#cbKindergarten').prop('id'), checkObj.kindergarten);
+		$('#cbInnshoku').prop('checked', checkObj.innshoku).checkboxradio('refresh');
 		$('#cbNinka').prop('checked', checkObj.ninka).checkboxradio('refresh');
 		$('#cbNinkagai').prop('checked', checkObj.ninkagai).checkboxradio('refresh');
 		$('#cbKindergarten').prop('checked', checkObj.kindergarten).checkboxradio('refresh');
