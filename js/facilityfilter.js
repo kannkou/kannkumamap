@@ -149,7 +149,7 @@ FacilityFilter.prototype.getFilteredFeaturesGeoJson = function (conditions, nurs
         filterfunc = function (item, idx) {
             f = function (item,idx) {
                 var _time = conditions['ninkagaiOpenTime'];
-                var open = item.properties['開園時間'] ? item.properties['開園時間'] : item.properties['Open'];
+                var open = item.properties['開始時間'] ? item.properties['開始時間'] : item.properties['Open'];
                 if(open == _time) {
                     return true;
                 }
@@ -181,7 +181,7 @@ FacilityFilter.prototype.getFilteredFeaturesGeoJson = function (conditions, nurs
                         break;
                 }
                 var h24   = item.properties['H24'] ? item.properties['H24'] : item.properties['H24'];
-                var close = item.properties['終園時間'] ? item.properties['終園時間'] : item.properties['Close'];
+                var close = item.properties['終了時間'] ? item.properties['終了時間'] : item.properties['Close'];
                 if(h24 !== null || $.inArray(close, checkAry) >= 0) {
                     return true;
                 }
