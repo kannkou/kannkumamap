@@ -483,6 +483,13 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<td>' + owner + '</td>';
         content += '</tr>';
     }
+     var owner = feature.get('台数') ? feature.get('台数') : feature.get('Owner');
+    if (owner !== undefined && owner !== null) {
+        content += '<tr>';
+        content += '<th>台数</th>';
+        content += '<td>' + owner + '</td>';
+        content += '</tr>';
+    }
     content += '</tbody></table>';
     return content;
 };
