@@ -330,8 +330,17 @@ Papamamap.prototype.getPopupTitle = function(feature)
 {
     // タイトル部
     var title = '';
-    var type = feature.get('種別') ? feature.get('種別') : feature.get('Type');
-    title  = '[' + type + '] ';
+    var type = feature.get('genre') ? feature.get('genre') : feature.get('Type');
+    if(type == 1) {
+        title = '[駐車場] ';
+    }else if(type == 2) {
+        title = '[寺社仏閣] ';
+    }else if(type == 3) {
+    	title = '[公園] ';
+    }else if(type == 4) {
+    	title = '[飲食店] ';
+    }else{
+    title  = '[' + type + '] ';}
     var owner = feature.get('設置') ? feature.get('設置') : feature.get('Ownership');
     if(owner !== undefined && owner !== null && owner !== "") {
         title += ' [' + owner +']';
@@ -354,11 +363,11 @@ Papamamap.prototype.getPopupContent = function(feature)
 {
     var content = '';
     content = '<table><tbody>';
-    var open  = feature.get('開園時間') ? feature.get('開園時間') : feature.get('Open');
-    var close = feature.get('終園時間') ? feature.get('終園時間') : feature.get('Close');
+    var open  = feature.get('開始時間') ? feature.get('開始時間') : feature.get('Open');
+    var close = feature.get('終了時間') ? feature.get('終了時間') : feature.get('Close');
     if (open != undefined && open !== null && open !== "" && close !== undefined && close !== null && close !== "") {
         content += '<tr>';
-        content += '<th>時間</th>';
+        content += '<th>営業時間</th>';
         content += '<td>';
         content += open + '〜' + close;
         content += '</td>';
@@ -438,19 +447,19 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<td>' + full + '人</td>';
         content += '</tr>';
     }
-    var tel = feature.get('TEL') ? feature.get('TEL') : feature.get('TEL');
+    var tel = feature.get('観光地の電話番号') ? feature.get('観光地の電話番号') : feature.get('TEL');
     if (tel !== undefined && tel !== null) {
         content += '<tr>';
         content += '<th>TEL</th>';
         content += '<td>' + tel + '</td>';
         content += '</tr>';
     }
-    var add1 = feature.get('住所１') ? feature.get('住所１') : feature.get('Add1');
-    var add2 = feature.get('住所２') ? feature.get('住所２') : feature.get('Add2');
-    if (add1 !== undefined && add2 !== undefined) {
+    var add1 = feature.get('住所') ? feature.get('住所') : feature.get('Add1');
+    //var add2 = feature.get('住所２') ? feature.get('住所２') : feature.get('Add2');
+    if (add1 !== undefined) {
         content += '<tr>';
         content += '<th>住所</th>';
-        content += '<td>' + add1 + add2 +'</td>';
+        content += '<td>' + add1　+'</td>';
         content += '</tr>';
     }
     var owner = feature.get('設置者') ? feature.get('設置者') : feature.get('Owner');

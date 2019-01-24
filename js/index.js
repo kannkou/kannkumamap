@@ -170,7 +170,7 @@ $('#mainPage').on('pageshow', function() {
 
 		// クリックした場所に保育施設がある場合、ポップアップダイアログを出力する
 		if (feature && "Point" == feature.getGeometry().getType()) {
-			var type = feature.get('種別') ? feature.get('種別') :  feature.get('Type');
+			var type = feature.get('Name') ? feature.get('Name') :  feature.get('Type');
 			if(type === undefined) {
 				return;
 			}
