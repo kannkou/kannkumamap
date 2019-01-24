@@ -479,7 +479,7 @@ Papamamap.prototype.getPopupContent = function(feature)
      var owner = feature.get('駐車場の料金') ? feature.get('駐車場の料金') : feature.get('Owner');
     if (owner !== undefined && owner !== null) {
         content += '<tr>';
-        content += '<th>駐車場の料金</th>';
+        content += '<th>駐車料金</th>';
         content += '<td>' + owner + '</td>';
         content += '</tr>';
     }
