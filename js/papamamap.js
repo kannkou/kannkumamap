@@ -469,6 +469,20 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<td>' + owner + '</td>';
         content += '</tr>';
     }
+     var owner = feature.get('定休日') ? feature.get('定休日') : feature.get('Owner');
+    if (owner !== undefined && owner !== null) {
+        content += '<tr>';
+        content += '<th>定休日</th>';
+        content += '<td>' + owner + '</td>';
+        content += '</tr>';
+    }
+     var owner = feature.get('駐車場の料金') ? feature.get('駐車場の料金') : feature.get('Owner');
+    if (owner !== undefined && owner !== null) {
+        content += '<tr>';
+        content += '<th>駐車場の料金</th>';
+        content += '<td>' + owner + '</td>';
+        content += '</tr>';
+    }
     content += '</tbody></table>';
     return content;
 };
